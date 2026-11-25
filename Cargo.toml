@@ -1,0 +1,25 @@
+[package]
+name = "dataset-converter"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.90"
+description = "Convert object-detection datasets between the Ultralytics YOLO layout and Hugging Face Parquet"
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0.105"
+arrow-array = "60.2.0"
+arrow-buffer = "60.2.0"
+arrow-schema = "60.2.0"
+clap = { version = "4.6.10", features = ["derive"] }
+imagesize = "0.15.0"
+parquet = { version = "60.2.0", default-features = false, features = ["arrow", "snap"] }
+saphyr = "0.4.1"
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+
+[dev-dependencies]
+tempfile = "3.27.0"
+
+[lints.rust]
+missing_docs = "warn"
+unsafe_code = "forbid"
